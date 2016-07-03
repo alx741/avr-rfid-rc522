@@ -60,3 +60,21 @@
 #define TestDAC1Reg     0x39 // Defines the test value for TestDAC1
 #define TestDAC2Reg     0x3A // Defines the test value for TestDAC2
 #define TestADCReg      0x3B // Shows the value of ADC I and Q channels
+
+
+
+/* Commands
+
+   MFRC522 Datasheed Page 70
+*/
+
+#define cmd_idle             0x00 // No action, cancels the current command execution
+#define cmd_mem              0x01 // Stores 25 bytes into the internal buffer
+#define cmd_generateRandomID 0x02 // Generates a 10-byte random ID number
+#define cmd_calcCRC          0x03 // Activates the CRC coprocessor of performs a self test
+#define cmd_transmit         0x04 // Transmits data from the FIFO buffer
+#define cmd_noCmdChange      0x07 // Can be used to modify the CommandReg register bits without affecting the command
+#define cmd_recieve          0x08 // Activates the receiver circuits
+#define cmd_transceive       0x0C // Transmits data from FIFO buffer to antenna and activate receiver after transmission
+#define cmd_mfAuthent        0x0E // Performs the MIFARE standard authentication as a reader
+#define cmd_softReset        0x0F // Resets the MFRC522
